@@ -37,10 +37,15 @@ dependencies:
   cupertino_icons: ^1.0.2
   dynamic_color: ^1.6.2
   flutter_displaymode: ^0.5.0
+  get: ^4.6.5
+  flutter_svg: ^2.0.2
+  vector_graphics: ^1.1.0
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  vector_graphics_compiler: ^1.1.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
