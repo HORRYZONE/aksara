@@ -1,5 +1,5 @@
+import 'package:aksara/component/Lesson1_overviewCard.dart';
 import 'package:aksara/component/lesson_1_nav.dart';
-import 'package:aksara/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,24 +28,7 @@ class MyApp extends StatelessWidget {
                   height: 250,
                   child: lesson_1_nav()
               ),
-              Card(
-                elevation: 0,
-                color: Colors.lightBlue,
-                child: SizedBox(
-                  width: 300,
-                  height: 100,
-                  child: Column(
-                    children: [
-                      Text('Overview',
-                      style: TextStyle(
-                      color: Apptheme.colors.white,
-                      ),
-                      ),
-                      Text('In this lesson, we will learn about the hand sign used to symbolize the alphabets from A - Z'),
-                    ],
-                  )
-                ),
-              )
+              lesson1_overviewCard(),
 
             ],
           ),
