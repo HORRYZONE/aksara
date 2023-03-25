@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(lesson_1_nav());
 }
-
 class lesson_1_nav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,7 @@ class lesson_1_nav extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 0,
+          top: -10,
           right: 0,
           child: Image(
             image: AssetImage('assets/Lesson Icon.png'),

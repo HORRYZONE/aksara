@@ -1,3 +1,5 @@
+import 'package:aksara/LearnPage.dart';
+import 'package:aksara/screens/Lesson1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,7 +8,11 @@ import 'package:onboarding/onboarding.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MyPageView(),
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MyPageView(),
+      '/lesson1': (context) => const Lesson1State()
+    },
   ));
 }
 class MyPageView extends StatefulWidget {
@@ -17,12 +23,25 @@ class MyPageView extends StatefulWidget {
 class _MyPageViewState extends State<MyPageView> {
   final PageController _controller = PageController(initialPage: 0);
 
+  bool thirdPage = false;
+
   @override
   void dispose() {
     _controller.dispose(); // call dispose method on page controller
     super.dispose();
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _controller.addListener(() {
+      if (_controller.page == 2) {
+        setState(() {
+          thirdPage = true;
+        });
+      }
+    });
+  }
 
   void _goToNextPage() {
     _controller.animateToPage(_controller.page!.toInt() + 1, duration: Duration(milliseconds: 500), curve: Curves.ease);
@@ -244,16 +263,18 @@ class _MyPageViewState extends State<MyPageView> {
             ),
             SizedBox(
               width: 343,
-              child: FloatingActionButton(
+              child: thirdPage ? ElevatedButton(onPressed: () {
+                Navigator.of(context).pushNamed('/lesson1');
+              }, child: Text('Continue') ): FloatingActionButton(
                 onPressed:  _goToNextPage,
                 backgroundColor: Color(0xFFFFA149),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
-              ),
-                child: Text('NEXT',
-                textAlign: TextAlign.center,
                 ),
-            ),
+                child: Text('NEXT',
+                  textAlign: TextAlign.center,
+                ),
+              ),
 
             ),
           ],
