@@ -135,32 +135,32 @@ class LoginScreen extends StatelessWidget {
                   },
                   child: const Text('Sign in with Google')),
             ),
-            SizedBox(
-              width: double.maxFinite,
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    shape: MaterialStateProperty.all<OutlinedBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50))),
-                    elevation: MaterialStateProperty.resolveWith<double>(
-                        (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return 0;
-                      }
-                      if (states.contains(MaterialState.focused)) {
-                        return 0;
-                      }
-                      if (states.contains(MaterialState.hovered)) {
-                        return 0;
-                      }
-                      return 0;
-                    }),
-                  ),
-                  onPressed: () {},
-                  child: const Text('Sign in with Microsoft')),
-            ),
+            // SizedBox(
+            //   width: double.maxFinite,
+            //   child: ElevatedButton(
+            //       style: ButtonStyle(
+            //         foregroundColor: MaterialStateProperty.all(Colors.white),
+            //         backgroundColor: MaterialStateProperty.all(Colors.black),
+            //         shape: MaterialStateProperty.all<OutlinedBorder>(
+            //             RoundedRectangleBorder(
+            //                 borderRadius: BorderRadius.circular(50))),
+            //         elevation: MaterialStateProperty.resolveWith<double>(
+            //             (Set<MaterialState> states) {
+            //           if (states.contains(MaterialState.pressed)) {
+            //             return 0;
+            //           }
+            //           if (states.contains(MaterialState.focused)) {
+            //             return 0;
+            //           }
+            //           if (states.contains(MaterialState.hovered)) {
+            //             return 0;
+            //           }
+            //           return 0;
+            //         }),
+            //       ),
+            //       onPressed: () {},
+            //       child: const Text('Sign in with Microsoft')),
+            // ),
             const SizedBox(
               height: 24,
             ),

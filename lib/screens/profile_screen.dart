@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
                       onPressed: () async {
                         await FirebaseAuth.instance.signOut();
                         await GoogleSignIn().signOut();
-                        Get.offAllNamed('/auth/login');
+                        Get.offAllNamed('/onboarding');
                       },
                       child: const Text('Log Out'),
                     ),
