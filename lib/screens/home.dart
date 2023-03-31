@@ -33,16 +33,6 @@ class HomeScreen extends StatelessWidget {
                     return LessonCard(title: 'Lesson 1', progress: 0, name: 'Alphabet');
                   },
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      Get.toNamed('/auth/login');
-                    },
-                    child: const Text('Login')),
-                ElevatedButton(
-                    onPressed: () {
-                      Get.toNamed('/auth/register');
-                    },
-                    child: const Text('Register'))
               ],
             ),
           ),
