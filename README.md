@@ -1,9 +1,13 @@
 How to Run the App
 
 Open the project in Android Studio or your preferred IDE.
+
 Run flutter pub get in the terminal or press "Get Dependencies" in Android Studio.
+
 Open main.dart.
-Run the app on a physical device or emulator.
+
+Run the app on a physical device or emulator
+
 If running on a physical device, make sure to enable debugging mode.
 
 Notes
