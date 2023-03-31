@@ -31,7 +31,6 @@ task wrapper(type: Wrapper){
 }
 
 tasks.register("prepareKotlinBuildScriptModel"){}
-
 android {
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
