@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "524107650640",
+    "project_id": "aksara-78d63",
+    "storage_bucket": "aksara-78d63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524107650640:android:fdf322e6c19813f2b3e355",
+        "android_client_info": {
+          "package_name": "com.example.aksara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524107650640-fdhpea7evtntp360rbuocb0m9v3s7916.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aksara",
+            "certificate_hash": "180bcbc58423833fb8ee4cf3100115542c525776"
+          }
+        },
+        {
+          "client_id": "524107650640-677ej6seonq7b9bog2kd4l2o0k6615uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPqwUzKodTT1npiMJzkMQBV6uutsayWo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524107650640-677ej6seonq7b9bog2kd4l2o0k6615uh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524107650640-7vrk0p63tb5iusflnkrpfkj05toah7p2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.aksara"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
