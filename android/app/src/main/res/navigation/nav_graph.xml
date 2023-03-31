@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/camera_fragment"
-        android:name="com.example.aksara.fragments.CameraFragment"
+        android:name="com.example.aksara.CameraFragment"
         android:label="CameraFragment">
 
         <action

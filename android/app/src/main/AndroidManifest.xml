@@ -22,6 +22,8 @@
         android:label="aksara">
         <activity
             android:name=".TensorActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
