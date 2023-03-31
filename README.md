@@ -10,6 +10,10 @@ How to Run the App
 
 -If running on a physical device, make sure to enable debugging mode.
 
+Machine learning repository
+
+https://github.com/shafiaaaa/machine-learning
+
 Notes
 
 Please ensure that you have a stable internet connection while running the app. If you encounter any issues or have any feedback, please don't hesitate to reach out to our support team [ danishfitri131@gmail.com]
