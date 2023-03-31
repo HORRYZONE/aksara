@@ -4,6 +4,7 @@ import 'package:aksara/controllers/app_controller.dart';
 import 'package:aksara/firebase_options.dart';
 import 'package:aksara/screens/auth/login_screen.dart';
 import 'package:aksara/screens/auth/registration_screen.dart';
+import 'package:aksara/screens/profile_screen.dart';
 import 'package:aksara/utils/app_theme.dart';
 import 'package:aksara/screens/home.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -20,7 +21,12 @@ void main() async {
 
   await GetStorage.init();
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
+  } catch (e) {
+    print(e.toString());
+  }
 
   runApp(const MyApp());
 
@@ -69,6 +75,7 @@ class _MyAppState extends State<MyApp> {
           '/': (context) => const HomeScreen(),
           '/auth/login': (context) => LoginScreen(),
           '/auth/register': (context) => RegistrationScreen(),
+          '/profile': (context) => const ProfileScreen()
         },
       );
     });

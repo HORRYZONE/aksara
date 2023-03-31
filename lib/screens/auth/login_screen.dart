@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -25,9 +26,27 @@ class LoginScreen extends StatelessWidget {
         errorMessage = e.message.toString();
       }
 
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(errorMessage), behavior: SnackBarBehavior.floating));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(errorMessage), behavior: SnackBarBehavior.floating));
     }
+  }
+
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
   @override
@@ -108,7 +127,12 @@ class LoginScreen extends StatelessWidget {
                       return 0;
                     }),
                   ),
-                  onPressed: () {},
+                  onPressed: () async {
+                    final credentials = await signInWithGoogle();
+                    if (credentials.user != null) {
+                      Get.offAllNamed('/');
+                    }
+                  },
                   child: const Text('Sign in with Google')),
             ),
             SizedBox(

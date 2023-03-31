@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 const double _navbarHeight = 50;
 
 class AksaraNavigationBar extends StatelessWidget {
   const AksaraNavigationBar({super.key});
+
+  static const platform = MethodChannel('com.elyasasmad.aksara/tensorflow');
+
+  Future<void> launchTF() async {
+    try {
+      await platform.invokeMethod('launchTensorFlowActivity');
+    } on PlatformException catch (e) {
+      print(e.message);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +49,11 @@ class AksaraNavigationBar extends StatelessWidget {
                 splashColor: const Color(0xFFF89300),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(70 / 2)),
-                onPressed: () {},
+                onPressed: () {
+                  launchTF();
+                },
                 backgroundColor: const Color(0xFFFFC727),
-                child:
-                    SvgPicture.string(fabSvgString, width: 28, height: 28),
+                child: SvgPicture.string(fabSvgString, width: 28, height: 28),
               ),
             ),
           ),
@@ -50,14 +63,41 @@ class AksaraNavigationBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                IconButton(onPressed: () {}, splashColor: const Color(0xFFF89300), icon: const Icon(Icons.home_outlined, color: Colors.white,)),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.school_outlined, color: Colors.white,)),
-                Container(width: size.width * 0.15,),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined, color: Colors.white,)),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.person_outline, color: Colors.white,)),
+                IconButton(
+                    onPressed: () {
+                      Get.offAndToNamed('/');
+                    },
+                    splashColor: const Color(0xFFF89300),
+                    icon: const Icon(
+                      Icons.home_outlined,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.school_outlined,
+                      color: Colors.white,
+                    )),
+                Container(
+                  width: size.width * 0.15,
+                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.settings_outlined,
+                      color: Colors.white,
+                    )),
+                IconButton(
+                    onPressed: () {
+                      Get.offAndToNamed('/profile');
+                    },
+                    icon: const Icon(
+                      Icons.person_outline,
+                      color: Colors.white,
+                    )),
               ],
             ),
-          ) 
+          )
         ]),
       ),
     );
